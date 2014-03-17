@@ -20,6 +20,7 @@
     IBOutlet UIButton *myButton;
     UIColor* green;
     IBOutlet UIButton *myEditButton;
+    BOOL isEditModeEnabled;
     
 }
 
@@ -41,6 +42,7 @@
     [items addObject:three];
     green = [UIColor greenColor];
     //buttonPressed = NO;
+    isEditModeEnabled = NO;
     
 }
 - (IBAction)onEditButtonPressed:(UIButton*)sender
@@ -49,7 +51,7 @@
 //    [changeButton setTitle:@"Done" forState:UIControlStateSelected];
     UIButton *btn = (UIButton *)sender;
     [btn setTitle:@"Done" forState:UIControlStateNormal];
-  
+    isEditModeEnabled = YES;
     
 }
 
@@ -93,6 +95,25 @@
 {
     //NSLog(@"%@", indexPath);
     [tableView cellForRowAtIndexPath:indexPath].textLabel.textColor = green;
+    
+    if (isEditModeEnabled == YES)
+    {
+        [items removeObjectAtIndex:indexPath.row];
+        [myTableView reloadData];
+        isEditModeEnabled = NO;
+        [myEditButton setTitle:@"Edit" forState:UIControlStateNormal];
+    }
 }
+
+//-(UITableView *)tableView:(UITableView *)tableView removeFromRowAtIndexPath:(NSIndexPath *) indexPath
+//{
+//    [tableView cellForRowAtIndexPath:indexPath];
+//    if (isEditModeEnabled == YES)
+//    {
+//        [items removeObjectAtIndex:indexPath.row];
+//        [myTableView reloadData];
+//        isEditModeEnabled = NO;
+//    }
+//}
 
 @end
