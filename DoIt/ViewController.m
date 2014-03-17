@@ -8,7 +8,11 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+{
+    IBOutlet UITableView *myTableView;
+    NSMutableArray* items;
+}
 
 @end
 
@@ -17,13 +21,27 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    items = @[@"One", @"Two", @"Three"];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [items count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* cell;
+    cell = [tableView dequeueReusableCellWithIdentifier:@"myReuseIdentifier"];
+    cell.textLabel.text = [NSString stringWithFormat:@"Row: %i", indexPath.row];
+    cell.textLabel.text = items[indexPath.row];
+    return cell;
 }
 
 @end
