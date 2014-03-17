@@ -19,6 +19,7 @@
     IBOutlet UITextField *myTextField;
     IBOutlet UIButton *myButton;
     UIColor* green;
+    IBOutlet UIButton *myEditButton;
     
 }
 
@@ -40,6 +41,15 @@
     [items addObject:three];
     green = [UIColor greenColor];
     //buttonPressed = NO;
+    
+}
+- (IBAction)onEditButtonPressed:(UIButton*)sender
+{
+//    UIButton* changeButton = editButton;
+//    [changeButton setTitle:@"Done" forState:UIControlStateSelected];
+    UIButton *btn = (UIButton *)sender;
+    [btn setTitle:@"Done" forState:UIControlStateNormal];
+  
     
 }
 
