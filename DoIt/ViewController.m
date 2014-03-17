@@ -11,7 +11,14 @@
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 {
     IBOutlet UITableView *myTableView;
+    NSString* one;
+    NSString* two;
+    NSString* three;
     NSMutableArray* items;
+    //BOOL buttonPressed;
+    IBOutlet UITextField *myTextField;
+    IBOutlet UIButton *myButton;
+    
 }
 
 @end
@@ -21,7 +28,17 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    items = @[@"One", @"Two", @"Three"];
+    
+    items = [[NSMutableArray alloc] init];
+    
+    one   = @"One";
+    two   = @"Two";
+    three = @"Three";
+    [items addObject:one];
+    [items addObject:two];
+    [items addObject:three];
+    //buttonPressed = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -32,6 +49,12 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+//    NSInteger newCount;
+//    if (buttonPressed == YES) {
+//        newCount = [items count];
+//        buttonPressed = NO;
+//        return newCount;
+//    }
     return [items count];
 }
 
@@ -42,6 +65,16 @@
     cell.textLabel.text = [NSString stringWithFormat:@"Row: %i", indexPath.row];
     cell.textLabel.text = items[indexPath.row];
     return cell;
+}
+
+- (IBAction)onAddButtonPressed:(id)myButton
+{
+    NSString* text;
+    text = myTextField.text;
+    [items addObject:text];
+    [myTableView reloadData];
+    myTextField.text = nil;
+    //[items insertObject:text inTheArrayAtIndex:[[items count]]];
 }
 
 @end
