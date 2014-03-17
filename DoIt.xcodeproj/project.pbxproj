@@ -21,7 +21,7 @@
 		26A2C1FE18D77293004604B9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A2C1E018D77292004604B9 /* UIKit.framework */; };
 		26A2C20618D77293004604B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 26A2C20418D77293004604B9 /* InfoPlist.strings */; };
 		26A2C20818D77293004604B9 /* DoItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A2C20718D77293004604B9 /* DoItTests.m */; };
-		26A2C21218D77329004604B9 /* CheckMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A2C21118D77329004604B9 /* CheckMate.framework */; };
+		26A2C21418D795B0004604B9 /* CheckMate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26A2C21318D795B0004604B9 /* CheckMate.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		26A2C20318D77293004604B9 /* DoItTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DoItTests-Info.plist"; sourceTree = "<group>"; };
 		26A2C20518D77293004604B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		26A2C20718D77293004604B9 /* DoItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DoItTests.m; sourceTree = "<group>"; };
-		26A2C21118D77329004604B9 /* CheckMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CheckMate.framework; sourceTree = "<group>"; };
+		26A2C21318D795B0004604B9 /* CheckMate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = CheckMate.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26A2C21218D77329004604B9 /* CheckMate.framework in Frameworks */,
 				26A2C1DF18D77292004604B9 /* CoreGraphics.framework in Frameworks */,
 				26A2C1E118D77292004604B9 /* UIKit.framework in Frameworks */,
+				26A2C21418D795B0004604B9 /* CheckMate.framework in Frameworks */,
 				26A2C1DD18D77292004604B9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -104,7 +104,7 @@
 		26A2C1DB18D77292004604B9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26A2C21118D77329004604B9 /* CheckMate.framework */,
+				26A2C21318D795B0004604B9 /* CheckMate.framework */,
 				26A2C1DC18D77292004604B9 /* Foundation.framework */,
 				26A2C1DE18D77292004604B9 /* CoreGraphics.framework */,
 				26A2C1E018D77292004604B9 /* UIKit.framework */,

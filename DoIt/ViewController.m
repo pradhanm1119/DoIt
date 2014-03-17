@@ -18,6 +18,7 @@
     //BOOL buttonPressed;
     IBOutlet UITextField *myTextField;
     IBOutlet UIButton *myButton;
+    UIColor* green;
     
 }
 
@@ -37,6 +38,7 @@
     [items addObject:one];
     [items addObject:two];
     [items addObject:three];
+    green = [UIColor greenColor];
     //buttonPressed = NO;
     
 }
@@ -75,6 +77,12 @@
     [myTableView reloadData];
     myTextField.text = nil;
     //[items insertObject:text inTheArrayAtIndex:[[items count]]];
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //NSLog(@"%@", indexPath);
+    [tableView cellForRowAtIndexPath:indexPath].textLabel.textColor = green;
 }
 
 @end
