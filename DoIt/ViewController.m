@@ -116,4 +116,14 @@
 //    }
 //}
 
+- (IBAction)onSwipeDelete:(id)sender
+{
+    UISwipeGestureRecognizer *onRightDelete = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:[UITableView didSelectRowAtIndexPath](onRightDelete)];
+    
+    [onRightDelete setDirection:UISwipeGestureRecognizerDirectionRight];
+    [[self view] addGestureRecognizer:onRightDelete];
+    
+    NSLog(@"%@", onRightDelete);
+}
+
 @end
